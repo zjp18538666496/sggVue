@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue初体验</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/common.css"/>
 </head>
 <body>
     <!-- vue容器 -->
     <div id="root">
-        <h1>你好，世界！</h1>
+        <div>你好，{{name}}！</div>
     </div>
 </body>
 <script src="./js/vue2/vue.js"></script> <!-- 引入vue文件 -->
 <script>
     Vue.config.productionTip = false /*  设置为 false 以阻止 vue 在启动时生成生产提示。 */
+    /* 创建vue实例 */
+    new Vue({
+        el:'#root', /*  用于指定当前vue实例为哪个容器提供服务，值通常为class选择器字符串 */
+        data:{
+            name:'张三',
+        }
+    })
 
 </script>
 </html>
